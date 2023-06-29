@@ -1,0 +1,14 @@
+<app-banner [name]="'Teams'"></app-banner>
+
+<div class="container">
+    
+
+    <div class="row">
+      <div class="col-lg-12" *ngFor="let t of teams" >
+        
+      <app-team [team]="t" (newEvent)="deleteTeam($event)"></app-team>
+     
+
+      </div>
+    </div>
+  </div>

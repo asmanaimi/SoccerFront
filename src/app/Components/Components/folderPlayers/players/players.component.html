@@ -1,0 +1,14 @@
+<app-banner [name]="'Players'"></app-banner>
+
+<div class="container">
+    
+
+    <div class="row">
+      <div class="col-lg-12" *ngFor="let p of players" >
+        
+      <app-player [player]="p" (newEvent)="deletePlayer($event)"></app-player>
+     
+
+      </div>
+    </div>
+  </div>

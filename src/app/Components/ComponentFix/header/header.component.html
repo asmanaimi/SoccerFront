@@ -1,0 +1,60 @@
+
+  <header class="site-navbar py-4" role="banner">
+
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="site-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo">
+          </a>
+        </div>
+        <div class="ml-auto">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li class="active"><a routerLink="" class="nav-link">Home</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add 
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="add-match">Add Match</a>
+                    <a class="dropdown-item" routerLink="add-player">Add Player</a>
+                    <a class="dropdown-item" routerLink="add-team">Add Teams</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  View Table
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" routerLink="view">Table Matches</a>
+                  <a class="dropdown-item" routerLink="table-player">Table Player</a>
+                  <a class="dropdown-item" routerLink="table-team">Table Team</a>
+              </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                View
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="all-Matches">Matches</a>
+                <a class="dropdown-item" routerLink="players">Players</a>
+                <a class="dropdown-item" routerLink="teams">Teams</a>
+            </div>
+        </li>
+            
+               <li><a  routerLink="blog" class="nav-link">Blog</a></li>
+             <li><a  routerLink="contact" class="nav-link">Contact</a></li>
+              <li><a  routerLink="login" class="nav-link">Login</a></li> 
+              <li><a  routerLink="signup" class="nav-link">Sign Up</a></li>
+
+            </ul>
+          </nav>
+
+          <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+              class="icon-menu h3 text-white"></span></a>
+        </div>
+      </div>
+    </div>
+
+  </header>

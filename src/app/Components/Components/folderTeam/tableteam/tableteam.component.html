@@ -1,0 +1,39 @@
+<app-banner [name]="'table teams'"></app-banner>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Coach</th>
+              <th scope="col">Action</th>
+              <th scope="col">Edit</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let team of teams">
+              <th scope="row">{{team.id}}</th>
+              <td>{{team.name}}</td>
+              <td>{{team.coach}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="delete(team.id)"> Delete</button>
+
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="navigate(team.id)"> Edit</button>
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

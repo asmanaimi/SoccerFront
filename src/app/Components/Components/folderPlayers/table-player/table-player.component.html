@@ -1,0 +1,43 @@
+<app-banner [name]="'table players'"></app-banner>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Number</th>
+              <th scope="col">position</th>
+              <th scope="col">Team</th>
+              <th scope="col">Action</th>
+              <th scope="col">Edit</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let player of players">
+              <th scope="row">{{player.id}}</th>
+              <td>{{player.name}}</td>
+              <td>{{player.number}}</td>
+              <td>{{player.position}}</td>
+              <td>{{player.team}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="delete(player.id)"> Delete</button>
+
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="navigate(player.id)"> Edit</button>
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

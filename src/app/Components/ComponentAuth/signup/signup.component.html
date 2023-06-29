@@ -1,0 +1,82 @@
+<app-banner [name]="'Sign Up'"></app-banner>
+
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <form [formGroup]="signupForm">
+          <div class="form-group">
+
+            <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+            <div
+              *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched)"
+              class="text-danger">
+              <div *ngIf="signupForm.controls['firstName'].errors?.minlength">
+                first Name min len 3
+              </div>
+              <div *ngIf="signupForm.controls['firstName'].errors?.required">
+                first Name is Req *
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="lastName" placeholder="last Name">
+          
+            <div
+            *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched)"
+            class="text-danger">
+            <div *ngIf="signupForm.controls['lastName'].errors?.minlength">
+              last Name min len 3
+            </div>
+            <div *ngIf="signupForm.controls['lastName'].errors?.required">
+              last Name is Req *
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" formControlName="email" placeholder="Email">
+            <div
+            *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)"
+            class="text-danger">
+            <div *ngIf="signupForm.controls['email'].errors?.email">
+              format email @ .
+            </div>
+            <div *ngIf="signupForm.controls['email'].errors?.required">
+              email is Req *
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="password" placeholder="password">
+          </div>
+         
+
+          <div class="form-group">
+            <button type="button" class="btn btn-primary py-3 px-5" (click)="signup()">Sign Up</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-4 ml-auto">
+
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <strong class="text-white d-block">Address</strong>
+            273 South Riverview Rd. <br> New York, NY 10011
+          </li>
+          <li class="mb-2">
+            <strong class="text-white d-block">Email</strong>
+            <a href="#">info@unslate.co</a>
+          </li>
+          <li class="mb-2">
+            <strong class="text-white d-block">
+              Phone
+            </strong>
+            <a href="#">+12 345 6789 012</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
