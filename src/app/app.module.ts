@@ -32,6 +32,9 @@ import { AddTeamComponent } from './Components/Components/folderTeam/add-team/ad
 import { PlayerComponent } from './Components/Components/folderPlayers/player/player.component';
 import { TeamsComponent } from './Components/Components/folderTeam/teams/teams.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthgGuard } from 'src/authg.guard';
+import { LogoutComponent } from './Components/ComponentAuth/logout/logout.component';
+import {  authInterceptorProviders } from './services/auth.interceptor.service';
 
 
 @NgModule({
@@ -61,7 +64,8 @@ import { HttpClientModule } from '@angular/common/http';
     TableteamComponent,
     ColorDirective,
     ReversePipe,
-    FilterPipe
+    FilterPipe,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +74,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers:[
+    authInterceptorProviders
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

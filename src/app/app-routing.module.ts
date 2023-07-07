@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthgGuard } from 'src/authg.guard';
 import { LoginComponent } from './Components/ComponentAuth/login/login.component';
+import { LogoutComponent } from './Components/ComponentAuth/logout/logout.component';
 import { SignupComponent } from './Components/ComponentAuth/signup/signup.component';
 import { BlogComponent } from './Components/Components/blog/blog.component';
 import { ContactComponent } from './Components/Components/contact/contact.component';
@@ -21,18 +23,19 @@ const routes: Routes = [
 
   
   {path:"",component :HomeComponent},
-  {path:"view",component :TableMatchComponent},
+  {path:"view",component :TableMatchComponent,canActivate: [AuthgGuard]},
   {path:"players",component :PlayersComponent},
   {path:"table-player",component :TablePlayerComponent},
   {path:"table-team",component :TableteamComponent},
   {path:"teams",component :TeamsComponent},
-  {path:"all-Matches",component :MatchesComponent},
-  {path:"add-match",component :AddMatchComponent},
-  {path:"add-match/:id",component :AddMatchComponent},
+  {path:"all-Matches",component :MatchesComponent,canActivate: [AuthgGuard]},
+  {path:"add-match",component :AddMatchComponent ,canActivate: [AuthgGuard]},
+  {path:"add-match/:id",component :AddMatchComponent,canActivate: [AuthgGuard]},
   {path:"add-player",component :AddPlayerComponent},
   {path:"add-player/:id",component :AddPlayerComponent},
   {path:"add-team/:id",component :AddTeamComponent},
   {path:"add-team",component :AddTeamComponent},
+  { path: 'logout', component: LogoutComponent },
 
   {path:"login",component :LoginComponent},
   {path:"signup",component :SignupComponent},

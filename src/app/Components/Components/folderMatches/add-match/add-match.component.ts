@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatchesService } from 'src/app/services/matches.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-add-match',
@@ -13,13 +14,14 @@ export class AddMatchComponent implements OnInit {
   match:any={}
  id:any={};
  title:string="ADD Matches"
-  constructor(private Route:Router,private activatedRoute:ActivatedRoute, private matchService:MatchesService) {
-
-   }
+  constructor(private Route:Router,private activatedRoute:ActivatedRoute, private userService:UsersService,private matchService:MatchesService) {
+}
 
   ngOnInit() {
     this.id=this.activatedRoute.snapshot.paramMap.get("id")
     console.log("here id ",this.id);
+    console.log("token is ",this.userService.getToken());
+    
     if(this.id){
       this.title="Edit Matches"
       this.getMatchById()
